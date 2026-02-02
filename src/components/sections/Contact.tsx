@@ -333,7 +333,7 @@ const Contact = () => {
                         className="object-cover"
                       />
                       {/* Online status indicator */}
-                      <div className="absolute bottom-0 right-0 w-5 h-5 bg-green-500 rounded-full border-4 border-zinc-900"></div>
+                      <div className="absolute bottom-0 right-70 w-5 h-5 bg-green-500 rounded-full border-4 border-zinc-900"></div>
                     </div>
                   </div>
 
