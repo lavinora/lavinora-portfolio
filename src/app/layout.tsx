@@ -26,10 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // TAMBAHKAN suppressHydrationWarning agar tidak error saat reload
     <html lang="en" suppressHydrationWarning>
       <body className={`${dmSans.variable} ${crimsonPro.variable} antialiased bg-background text-foreground font-sans`}>
-        {/* BUNGKUS CHILDREN DENGAN THEME PROVIDER */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
