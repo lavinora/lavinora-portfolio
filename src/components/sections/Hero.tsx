@@ -1,17 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
-import { Button } from "../ui/button";
 import Image from "next/image";
 import { PROFILE_DATA } from "@/data";
 import { TypeAnimation } from 'react-type-animation';
 
 const Hero: React.FC = () => {
-  const scrollToWorks = () => {
-    document.getElementById("works")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section 
       id="hero" 
