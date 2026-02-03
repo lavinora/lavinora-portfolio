@@ -63,7 +63,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-32 px-6 bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800"
+      className="relative py-32 px-6 bg-zinc-50/80 dark:bg-black border-b border-zinc-200 dark:border-zinc-800"
     >
       <div
         className="absolute inset-0 opacity-[0.03] dark:opacity-[0.02]"
@@ -204,7 +204,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="p-8 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50 dark:bg-zinc-900/50">
+            <div className="p-8 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900/50">
               <h3 className="font-serif text-2xl font-semibold text-zinc-900 dark:text-white mb-6">
                 Let&apos;s Connect
               </h3>

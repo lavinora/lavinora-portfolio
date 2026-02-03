@@ -1,6 +1,7 @@
 import Works from "@/components/sections/Works";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
 import Skills from "@/components/sections/Skills";
 import Contact from "@/components/sections/Contact";
@@ -12,21 +13,16 @@ import PageTransition from "@/components/PageTransition";
 const Page = () => {
   return (
     <>
-      {/* Loading screen on first visit */}
       <LoadingScreen />
-      
-      {/* Scroll progress indicator */}
       <ScrollProgress />
-      
-      {/* Custom cursor effect */}
       <CustomCursor />
       
-      {/* Main content with page transition */}
       <PageTransition>
         <div className="min-h-screen bg-white dark:bg-black">
           <Header />
           <main>
             <Hero />
+            <About />
             <Experience />
             <Works />
             <Skills />

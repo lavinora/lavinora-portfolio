@@ -92,17 +92,6 @@ const Hero: React.FC = () => {
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-md mx-auto md:mx-0">
               {PROFILE_DATA.hero.description}
             </p>
-            
-            <div className="pt-2 flex justify-center md:justify-start">
-              <Button
-                size="lg"
-                onClick={scrollToWorks}
-                className="rounded-lg px-8 bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-colors"
-              >
-                <span>{PROFILE_DATA.hero.ctaButton}</span>
-                <ArrowDown className="ml-2 w-4 h-4" />
-              </Button>
-            </div>
           </motion.div>
         </div>
       </div>

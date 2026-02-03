@@ -1,29 +1,27 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Home, Briefcase, Mail, Github, Linkedin, Twitter, Sun, Moon, Menu, X } from "lucide-react";
+import { Home, Briefcase, Mail, Sun, Moon, Menu, X, User } from "lucide-react";
 import { useTheme } from "next-themes";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const { theme, setTheme } = useTheme();
 
-  // Daftar menu navigasi
   const navItems = [
     { icon: Home, href: "#hero", label: "Home" },
     { icon: Briefcase, href: "#works", label: "Work" },
+    { icon: User, href: "#about", label: "About" },
     { icon: Mail, href: "#contact", label: "Contact" },
-    // Link Eksternal (bisa disesuaikan)
-    { icon: Github, href: "https://github.com/yourusername", label: "GitHub", external: true },
-    { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn", external: true },
+    { icon: FaGithub, href: "https://github.com/lavinora", label: "GitHub", external: true },
+    { icon: FaLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn", external: true },
   ];
 
-  // Fungsi Smooth Scroll
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
     e.preventDefault();
     
-    // Hapus tanda # untuk mendapatkan ID
     const targetId = href.replace("#", "");
     const elem = document.getElementById(targetId);
     
@@ -34,7 +32,6 @@ const Header = () => {
     }
   };
 
-  // Optional: Intersection Observer untuk mendeteksi section yang sedang aktif saat di-scroll
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
@@ -54,7 +51,7 @@ const Header = () => {
 
   return (
     <>
-      {/* --- DESKTOP NAVIGATION (Floating Bottom) --- */}
+      {/* DESKTOP NAVIGATION */}
       <nav className="hidden md:block fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
         <div className="flex items-center gap-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-full px-4 py-3 border border-zinc-200 dark:border-zinc-800 shadow-xl shadow-zinc-200/50 dark:shadow-black/50 transition-all duration-300">
           
@@ -62,7 +59,6 @@ const Header = () => {
             const Icon = item.icon;
             const isActive = activeSection === item.href.replace("#", "");
             
-            // Render Link Eksternal
             if (item.external) {
               return (
                 <a
@@ -78,7 +74,6 @@ const Header = () => {
               );
             }
             
-            // Render Internal Link (Smooth Scroll)
             return (
               <a
                 key={item.label}
@@ -114,11 +109,11 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* --- MOBILE NAVIGATION (Floating Bottom) --- */}
+      {/* MOBILE NAVIGATION  */}
       <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-sm">
         <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-2xl shadow-zinc-200/50 dark:shadow-black/50 transition-all duration-300">
           
-          {/* Baris Utama (Selalu Terlihat) */}
+          {/* Baris Utama */}
           <div className="flex items-center justify-between px-4 py-3">
             {/* Home */}
             <a
@@ -168,7 +163,7 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Menu Tambahan (Expanded) */}
+          {/* Menu Tambahan */}
           {isMenuOpen && (
             <div className="px-4 pb-4 pt-2 border-t border-zinc-100 dark:border-zinc-800 animate-in slide-in-from-bottom-5 fade-in duration-200">
               <div className="grid grid-cols-4 gap-2 mb-3">
@@ -190,7 +185,7 @@ const Header = () => {
                 })}
               </div>
 
-              {/* Theme Toggle Mobile Expanded */}
+              {/* Theme Toggle Mobile */}
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="w-full flex items-center justify-center gap-2 p-3 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 text-zinc-600 dark:text-zinc-300 text-sm font-medium"

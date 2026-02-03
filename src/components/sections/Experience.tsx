@@ -11,7 +11,7 @@ const Experience = () => {
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="font-serif text-4xl font-semibold text-zinc-900 dark:text-white">
-            Career & Experience
+            Work Experience
           </h2>
         </div>
 
