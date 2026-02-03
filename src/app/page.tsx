@@ -4,7 +4,6 @@ import Hero from "@/components/sections/Hero";
 import Experience from "@/components/sections/Experience";
 import Skills from "@/components/sections/Skills";
 import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -33,7 +32,6 @@ const Page = () => {
             <Skills />
             <Contact />
           </main>
-          <Footer />
         </div>
       </PageTransition>
     </>
